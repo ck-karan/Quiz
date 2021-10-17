@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<form class="box" name="log" action="login.php" onsubmit="return check()" method="post">
+		<h1>LogIn</h1>
+		<input type="radio" name="ch" value="student">Student  
+		<input type="radio" name="ch" value="admin">Admin
+		<input type="text" name="uname" placeholder="Username">
+		<input type="password" name="pwd" placeholder="Password"><br>
+		<input type="submit" class="button" value="Login">
+	<br><br>	<font color="red">Enter correct Username or Password.</font>
+		<h5>For Sign Up <br> <br>
+		 <a href="signup.html" class="button">Signup</a></h5>
+	</form>
+</body>
+</html>
+
+<script>
+
+function check()
+{
+ch = document.forms["log"]["ch"]
+
+if(!(ch[0].checked || ch[1].checked))
+{
+        alert("Select admin or student.")
+        return false
+}
+
+uname = document.forms["log"]["uname"]
+
+if(uname.value=="")
+{
+        alert("Enter User name.")
+        uname.focus()
+        return false
+}
+
+pwd = document.forms["log"]["pwd"]
+
+if(pwd.value=="")
+{
+        alert("Enter Password.")
+        pwd.focus()
+        return false
+}
+
+return true
+}
+
+
+</script>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<form name="sup" onsubmit="return validate()" class="sbox" action="signup.php" method="post">
+		
+		<h1>Registration</h1>
+		
+		<input type="text" name="name" pattern="[A-za-z]{4,10}" placeholder="Name" required>
+		<br><span id='id1'></span>
+		<input type="text" name="uname" onkeyup = "show(this.value)" pattern="[A-Za-z]{4,10}" placeholder="User Name" required>
+		<input type="email" name="email" placeholder="Email ID" required>
+		<input type="text" name="phn" placeholder="Phone No" pattern="[0-9]{10}" required>
+		<input type="password" name="pwd1" placeholder="Password" pattern=".{5,}" required>
+		<input type="password" name="pwd2" placeholder="ReEnter Password" pattern=".{5,}" required><br>
+		
+		<input type="submit" name="Register" class="button" value="Register" required>	
+	</form>
+</body>
+</html>
+
+
+<script>
+
+//checking uname available or not by using ajax.
+
+function show(s)
+{
+x = new XMLHttpRequest()
+x.open("GET","getuname.php?s="+s,true)
+x.send()
+x.onreadystatechange = function()
+	{
+		if(x.readyState==4 && x.status==200)
+		document.getElementById("id1").innerHTML=x.responseText
+	}
+}
+
+
+//signup validation js
+function validate()
+{
+	pwd1 = document.forms["sup"]["pwd1"]
+	pwd2 = document.forms["sup"]["pwd2"]
+
+	if(!(pwd1.value === pwd2.value))
+	{
+		alert ("Enter same Password in both boxes.")
+		pwd2.focus()
+		return false
+	}
+	return confirm("Are you sure to proceed ?")
+}
+</script>
+
