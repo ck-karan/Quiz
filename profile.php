@@ -41,12 +41,7 @@ $uname = $_SESSION['uname'];
 ?>
 
  </h1>
-</div>
-<h2 style="color:red;" align="right">
-<a href="profile.php" >
-
 <?php
-echo $uname."</a>&emsp;&emsp;&emsp;&emsp;</h2>    ";
 
 echo "<center>";
 $res = pg_query($con,"select * from student where uname='$uname'");

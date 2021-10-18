@@ -19,13 +19,6 @@ include "header.php";
                                 <center>Results</center>
                                 </h1>
 </div>
-<h2 style="color:darkred;" align="right">
-<a href="profile.php">
-<?php
-echo $_SESSION['uname']."</a>&emsp;&emsp;&emsp;&emsp;    ";
-?>
-</h2>
-
 
 <center>
 <form action="result.php?who=student" method='post'>
@@ -42,3 +35,5 @@ while($s = pg_fetch_array($res))
 &emsp;:&emsp; <input type='submit' value='View Scores'>
 </form>
 </center>
+
+<?php include "footer.php"; ?>

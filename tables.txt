@@ -1,0 +1,35 @@
+admin
+uname- varchar
+name - varchar (pk)
+email - varchar
+phno - varchar
+password - varchar
+
+student
+uname- varchar
+name - varchar (pk)
+email - varchar
+phno - varchar
+password - varchar
+
+totquiz
+sno - int (pk)
+qname - varchar
+hits - int
+info - varchar
+
+//this tables dynamically created after creating exam quiz in application 
+<subject>
+sno - int (pk)
+que - varchar
+a - varchar
+b - varachar
+c - varchar
+d - varchar
+ans - varchar
+
+res_<subject>
+sno - int (pk)
+name - varchar
+score - int
+date - date

@@ -1,5 +1,10 @@
 <?php
 ?>
+<head>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+</head>
 <div class="topnav"><center>
         <center>
 <a href = "home.php">Home</a>
@@ -11,9 +16,7 @@
 </center>
 </div>
 
-<h2 style="color:darkred;" align="right">
-<a href="profile.php" style="text-decoration: none; padding:5px 45px; background-color: #2b2b2b; color: #fff;">
 
-<?php
-echo $_SESSION['uname']."</a>&emsp;&emsp;&emsp;&emsp;    ";
-?></h2>
+<h5 align="right">
+<a href="profile.php" class="button">User : <?php echo $_SESSION['uname']; ?></a></h5>
+

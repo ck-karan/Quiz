@@ -25,10 +25,7 @@ echo "<div class='col-xs-12' style='position: relative; padding-right: 0px; back
 				<b>Results</b>
                                 </h1>
 </div>";
-?>
-    <a href='logout.php'><h3 style='color:red'; align='right'>Log Out<h3></a>
-                
-<?php
+
 $qname = $_POST['qname'];
 $result = "res_".$qname;
 echo "<h3><b>$qname </b></h3>";

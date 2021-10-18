@@ -44,3 +44,4 @@ include "header.php";
 </tr>
 </table>
 </article>
+<?php include "footer.php"; ?>

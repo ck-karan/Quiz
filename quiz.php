@@ -8,6 +8,7 @@ include "dbcon.php";
 <head>
         <title>Quiz</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 </head>
 
 <center>
@@ -21,13 +22,6 @@ include "header.php";
                                 </h1>
  </div>
 
-<h2 style="color:darkred;" align="right">
-<a href="profile.php">
-<?php
-echo $_SESSION['uname']."</a>&emsp;&emsp;&emsp;&emsp;    ";
-?>
-</h2>
-
 <?php
 
 $res = pg_query($con,"select qname,info from totquiz");
@@ -36,11 +30,17 @@ while($s=pg_fetch_row($res))
 {
 
 ?>
-<div class="quiz">
-<h2><u><?php echo $s[0];  ?></u></h2>
-<h4><?php echo $s[1]; ?></h4>
-<a href='test.php?s=<?php echo $s[0]; ?>'><button>Take Test</button></a>
+
+<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $s[0];  ?></h5>
+        <p class="card-text"><?php echo $s[1]; ?></p>
+        <a href='test.php?s=<?php echo $s[0]; ?>' class="btn btn-primary">Take Test</a>
+      </div>
+    </div>
 </div>
+
 <?php
 }
 include "footer.php";
