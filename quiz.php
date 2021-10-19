@@ -8,7 +8,7 @@ include "dbcon.php";
 <head>
         <title>Quiz</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    
 </head>
 
 <center>
@@ -40,7 +40,7 @@ while($s=pg_fetch_row($res))
       </div>
     </div>
 </div>
-
+<br><br>
 <?php
 }
 include "footer.php";
