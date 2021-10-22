@@ -26,7 +26,7 @@
 		if($ch=="student")
 			header("Location: home.php");
 		else
-			header("Location: admin.php");
+			header("Location: homeAdmin.php");
             }
             else header("Location: relogin.html");
         }

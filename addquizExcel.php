@@ -5,7 +5,8 @@ include "adminHeader.php";
 <br>
 
 <center>
-<form action = 'createquiz.php' method = 'post'>
+<form action="addQuizFromExcel.php" method="post" enctype="multipart/form-data">
+
 New Quiz Name : <input type = 'text' name='qname' required><br><br>
 About Quiz : <textarea name='info'></textarea> <br><br>
 Quiz Difficulty : 
@@ -15,9 +16,10 @@ Quiz Difficulty :
         <option value="High">High</option>
     </select>
     <br><br>
-Add Questions maniually : <input type = 'submit' value='Add'>
+
+Select file: <input type="file" name="file" required/>
+
+<br><br>    
+      <p><button type="submit" name="submit">Submit</button></p>
 </form>
-<br><br>
-
-<center>
-
+</center>

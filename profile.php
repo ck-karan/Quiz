@@ -50,9 +50,9 @@ while($s  = pg_fetch_array($res))
 	echo "<tr><td>$s[0]</td><td>$s[1]</td><td>$s[2]</td><td>$s[3]</td></tr>";
 
 ?>
-<tr><td><button onclick="show('uname')">change</button></td><td><button onclick="show('name')">change</button></td><td><center><button onclick="show('email')">change</button></td><td><button onclick="show('phno')">change</button></td></tr>
+<tr><td><button class="btn btn-info" onclick="show('uname')">change</button></td><td><button class="btn btn-info" onclick="show('name')">change</button></td><td><center><button class="btn btn-info" onclick="show('email')">change</button></td><td><button class="btn btn-info" onclick="show('phno')">change</button></td></tr>
 </table><br><br>
-<b>Change Password :</b>  <a href='editinfo.php?change=pwd'><button>change</button></a>
+<b>Change Password :</b>  <a href='editinfo.php?change=pwd'><button class="btn btn-info">change</button></a>
 </center>
 
 <div id='id1'></div>

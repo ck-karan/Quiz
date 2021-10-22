@@ -1,6 +1,8 @@
 <?php
 session_start();
+include "dbcon.php";
 ?>
+
 <a href='logout.php'><h3 style='color:red'; align='right'>Log Out<h3></a>
 <br>
 
@@ -11,7 +13,6 @@ session_start();
                                 </h1>
 </div>
 <?php
-include "dbcon.php";
 $uname = $_SESSION['uname'];
 
 echo "<h2 align='right'>Admin : ".$uname."&emsp;&emsp;&emsp;&emsp;</h2>";
@@ -23,21 +24,40 @@ echo "<h2 align='right'>Admin : ".$uname."&emsp;&emsp;&emsp;&emsp;</h2>";
 
 <?php
 $res = pg_query($con,"select * from totquiz");
-echo "<table border=1><tr><th>Sr.No.</th><th>Quiz Name</th><th>Hits</th></tr>";
 $i=1;
-while($s = pg_fetch_array($res))
-{
-	echo "<tr><td>".$i++.")</td><td>$s[1]</td><td>$s[2]</td></tr>";
-}
-echo "</table>";
 ?>
 <br>
+<br>
+
+<div class="container">		
+	<div class="well-sm col-sm-12">
+		<div class="btn-group pull-right">	
+			<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+				<button type="submit" id="dataExport" name="dataExport" value="Export to excel" class="btn btn-info">Export To Excel</button>
+			</form>
+		</div>
+	</div>				  
+	<table id="">
+		<tr>
+			<th>Sr.No.</th>
+			<th>Quiz Name</th>
+			<th>Hits</th>
+			<th>Difficulty</th>			
+		</tr>
+			<?php while($s = pg_fetch_array($res)) { ?>
+              <?php  echo "<tr><td>".$i++.")</td><td>$s[1]</td><td>$s[2]</td><td>$s[4]</td></tr>" ?>
+			<?php } ?>
+    </table>		
+</div>
+
+
+
 <br>
 <br>
 
 
 <!--Add New QUIZ -->
-Add Quiz: &emsp;<a href='addquiz1.php'><button>Add</button></a>
+Add Quiz: &emsp;<a href='addQuizSelect.php'><button>Add</button></a>
 <br><br><br>
 
 
@@ -84,3 +104,4 @@ while($s = pg_fetch_array($res))
 
 
 </center>
+

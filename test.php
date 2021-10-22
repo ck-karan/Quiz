@@ -48,7 +48,7 @@ while($s=pg_fetch_row($res))
 			"<li>	<input type='radio' name='".$s[0]."' value='c'>".$s[4].
 			"<li>	<input type='radio' name='".$s[0]."' value='d'>".$s[5]."<br><br> </ol>";
 }
-echo "<input type='submit' value='submit'></form>";
+echo "<input class='btn btn-info' type='submit' value='submit'></form>";
 ?>
 
 <!--js for submit test-->

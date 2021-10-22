@@ -32,7 +32,7 @@ while($s = pg_fetch_array($res))
 ?>
 
 </select>
-&emsp;:&emsp; <input type='submit' value='View Scores'>
+&emsp;:&emsp; <input type='submit' class="btn btn-info" value='View Scores'>
 </form>
 </center>
 

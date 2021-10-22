@@ -12,5 +12,5 @@ $res = pg_query($con,"delete from totquiz where qname='$qname'") or die("Failed 
 echo "<center>done <br><br>";
 //header('Location:admin.php');
 ?>
-Click <a href="admin.php">here</a> for Admin page.
+Click <a href="homeAdmin.php">here</a> for Admin page.
 </center>
